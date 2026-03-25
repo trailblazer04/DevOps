@@ -6,7 +6,7 @@ on:
     branches: [ main ]
     paths:
       - 'Projects/cicd-github-actions/advanced-cicd-pipeline-flask-app/**'
-      - '.github/workflows/advanced-cd.yml'
+      - '.github/workflows/advanced-flask-cd.yml'
 
 jobs:
   deploy-production:
