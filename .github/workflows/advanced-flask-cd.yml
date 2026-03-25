@@ -23,5 +23,7 @@ jobs:
 
       - name: Run Deployment Script
         run: |
+          # Makes the script executable 
+          chmod +x ./deployment/deploy.sh
           # We execute the bash script we just created
           ./deployment/deploy.sh production
