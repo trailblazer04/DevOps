@@ -1,0 +1,27 @@
+name: Advanced CD Pipeline
+
+# Only run this when code is pushed to main
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'Projects/cicd-github-actions/advanced-cicd-pipeline-flask-app/**'
+      - '.github/workflows/advanced-cd.yml'
+
+jobs:
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: Projects/cicd-github-actions/advanced-cicd-pipeline-flask-app
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Deployment Script
+        run: |
+          # We execute the bash script we just created
+          ./deployment/deploy.sh production
